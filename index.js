@@ -110,7 +110,7 @@ loginForm.addEventListener("submit", function (event) {
   hasil = hasilLogin;
   if (hasilLogin != "error") {
     document.querySelector("#loginForm").style.display = "none";
-    document.querySelector(".beranda").style.display = "flex";
+    window.location.href = "homepage.html";
   }
   id.value = "";
   pass.value = "";

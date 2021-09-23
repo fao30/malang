@@ -6,7 +6,7 @@ body {
   /* background-position: center; */
 }
 .container-login {
-  width: 100%;  
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -79,7 +79,7 @@ body {
   border-radius: 31px;
   background-color: #333333;
   pointer-events: none;
-  
+
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -90,7 +90,6 @@ body {
   background-color: #222222;
   width: calc(100% + 100px);
 }
-
 
 #btnInputType {
   content: "";
@@ -109,9 +108,16 @@ body {
   border-radius: 31px;
   background-color: #333333;
   pointer-events: none;
-  
+
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
+
+/* #admin {
+  display: none;
+}
+#me {
+  display: none;
+} */
