@@ -223,10 +223,7 @@ button:focus {
   color: white;
 }
 
-.delete-btn,
-.ongoing-btn,
-.pending-btn,
-.done-btn {
+#btnSubmit {
   background: #dc3246;
   color: white;
   border: none;

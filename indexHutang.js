@@ -109,9 +109,21 @@ function render() {
     // create list
     const newTodo = document.createElement("li");
     newTodo.innerText = `${dataPenghutang[i].nama} -- ${dataPenghutang[i].alamat} -- ${dataPenghutang[i].telp} -- ${dataPenghutang[i].dueDate} -- ${dataPenghutang[i].nominal}`;
-    newTodo.classList.add("todo-item");
+    let ti = "todo-item" + [i];
+    newTodo.classList.add(ti);
     todo.appendChild(newTodo);
     // todo.appendChild(button);
+    // append to todoList
+    let nh = "nominalHutang" + [i];
+    let bs = "btnSubmit" + [i];
+    const inputBox = document.createElement("INPUT");
+    inputBox.setAttribute("type", "text");
+    inputBox.setAttribute("id", nh);
+    todo.appendChild(inputBox);
+    const btnSubmit = document.createElement("button");
+    btnSubmit.innerHTML = "Submit";
+    btnSubmit.setAttribute("id", bs);
+    todo.appendChild(btnSubmit);
 
     // append to todoList
     todoList.appendChild(todo);
@@ -127,9 +139,37 @@ function render() {
   }
 
   //nominal adalah input nominal baru yang diinginkan
+
   function updatePinjaman(data, nominal) {
-    data.nominal = nominal;
+    data.nominal -= nominal;
     return;
   }
 }
 render();
+
+for (let k = 0; k < dataPenghutang.length; k++) {
+  let btn = "btnSubmit" + [k];
+  let is = "#nominalHutang" + [k];
+  let isi = document.querySelector(is);
+  let ti = ".todo-item" + [k];
+  const element = document.getElementById(btn);
+
+  element.addEventListener("click", () => {
+    // console.log("halooo" + [k]);
+    dataPenghutang[k].nominal -= isi.value;
+    let jumlah = document.querySelector(ti);
+    jumlah.innerHTML = `${dataPenghutang[k].nama} -- ${dataPenghutang[k].alamat} -- ${dataPenghutang[k].telp} -- ${dataPenghutang[k].dueDate} -- ${dataPenghutang[k].nominal}`;
+  });
+}
+
+// let btnSubmit = document.querySelectorAll("#btnSubmit");
+// for (let i = 0; i < btnSubmit.length; i++) {
+//   btnSubmit[i].style.color = "#10b981";
+//   btnSubmit[i].style.backgroundColor = "#d1fae5";
+// }
+
+// let inputBox = document.querySelectorAll("#btnSubmit");
+// for (let i = 0; i < inputBox.length; i++) {
+//   inputBox[i].style.color = "#10b981";
+//   inputBox[i].style.backgroundColor = "#d1fae5";
+// }
