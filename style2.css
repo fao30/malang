@@ -54,7 +54,7 @@ h2 {
   height: 700px;
   border-top: 10px solid rgb(255, 255, 255);
   border-bottom: 10px solid lightseagreen;
-  background-image: url(imgHero.jpg);
+  background-image: url(/img/logo.png);
   background-size: cover;
   background-position: 0 -60px;
 }
@@ -112,7 +112,7 @@ th {
 }
 
 /*======================================
-  */
+*/
 * {
   margin: 0;
   padding: 0;

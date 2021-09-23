@@ -1,10 +1,13 @@
 #loginForm {
   display: flex;
 }
+#masuk {
+  color: aqua;
+}
 .beranda {
   /* background-color: #4caf50;  */
   border: none;
-  color: white;
+  color: rgb(19, 2, 2);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -30,7 +33,7 @@
 body {
   padding: 0;
   margin: 0;
-  color: white;
+  color: rgb(8, 8, 8);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   /* background-position: center; */
 }
@@ -95,3 +98,41 @@ h1 {
   cursor: pointer;
 }
 /* BANG LUDFI */
+.container {
+  width: auto;
+  margin: auto;
+  background-color: rgb(117, 117, 117);
+}
+.header {
+  padding: 5px;
+}
+.hero {
+  height: 700px;
+  border-top: 10px solid rgb(255, 255, 255);
+  border-bottom: 10px solid lightseagreen;
+  background-image: url(imgHero.jpg);
+  background-size: cover;
+  background-position: 0 -60px;
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.penghutang-box {
+  width: 60%;
+  background-color: white;
+  margin-top: 20px;
+  /* padding: 15px; */
+  border-radius: 10px;
+}
+
+.todo-list {
+  min-width: 40%;
+  list-style: none;
+  /* padding-bottom: 2rem; */
+  transition: all 0.5s ease;
+}
