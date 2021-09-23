@@ -1,0 +1,22 @@
+#loginForm {
+  display: flex;
+}
+.testButton {
+  /* background-color: #4caf50;  */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 50px;
+  display: none;
+}
+#pinjaman {
+  display: none;
+}
+#buron {
+  display: none;
+}
