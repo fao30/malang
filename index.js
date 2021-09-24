@@ -109,41 +109,47 @@ loginForm.addEventListener("submit", function (event) {
   let hasilLogin = loginPage(id.value, pass.value);
   hasil = hasilLogin;
   if (hasilLogin != "error") {
+    localStorage.setItem("role", hasil[1]);
     document.querySelector("#loginForm").style.display = "none";
     window.location.href = "homepage.html";
   }
+
   id.value = "";
   pass.value = "";
 });
+
+let sta = document.querySelector("#admin");
+sta.textContent = "test";
+
 // home button untuk pilih buron apa pinjaman
-let pinjam = document.querySelector("#pinjamButton");
-pinjam.addEventListener("click", function () {
-  if (hasil[1] == "admin") {
-    document.querySelector(".beranda").style.display = "none";
-    document.querySelector("#pinjaman").style.display = "flex";
-  } else {
-    document.querySelector(".beranda").style.display = "none";
-    document.querySelector("#pinjaman2").style.display = "flex";
-  }
-});
-let buron = document.querySelector("#buronButton");
-buron.addEventListener("click", function () {
-  document.querySelector(".beranda").style.display = "none";
-  document.querySelector("#buron").style.display = "flex";
-});
-// //
-let pinjHome = document.querySelector("#pinjamanHome");
-pinjHome.addEventListener("click", function () {
-  document.querySelector("#pinjaman").style.display = "none";
-  document.querySelector(".beranda").style.display = "flex";
-});
-let pinjHome2 = document.querySelector("#pinjamanHome2");
-pinjHome2.addEventListener("click", function () {
-  document.querySelector("#pinjaman2").style.display = "none";
-  document.querySelector(".beranda").style.display = "flex";
-});
-let buronHome = document.querySelector("#buronHome");
-buronHome.addEventListener("click", function () {
-  document.querySelector("#buron").style.display = "none";
-  document.querySelector(".beranda").style.display = "flex";
-});
+// let pinjam = document.querySelector("#pinjamButton");
+// pinjam.addEventListener("click", function () {
+//   if (hasil[1] == "admin") {
+//     document.querySelector(".beranda").style.display = "none";
+//     document.querySelector("#pinjaman").style.display = "flex";
+//   } else {
+//     document.querySelector(".beranda").style.display = "none";
+//     document.querySelector("#pinjaman2").style.display = "flex";
+//   }
+// });
+// let buron = document.querySelector("#buronButton");
+// buron.addEventListener("click", function () {
+//   document.querySelector(".beranda").style.display = "none";
+//   document.querySelector("#buron").style.display = "flex";
+// });
+// // //
+// let pinjHome = document.querySelector("#pinjamanHome");
+// pinjHome.addEventListener("click", function () {
+//   document.querySelector("#pinjaman").style.display = "none";
+//   document.querySelector(".beranda").style.display = "flex";
+// });
+// let pinjHome2 = document.querySelector("#pinjamanHome2");
+// pinjHome2.addEventListener("click", function () {
+//   document.querySelector("#pinjaman2").style.display = "none";
+//   document.querySelector(".beranda").style.display = "flex";
+// });
+// let buronHome = document.querySelector("#buronHome");
+// buronHome.addEventListener("click", function () {
+//   document.querySelector("#buron").style.display = "none";
+//   document.querySelector(".beranda").style.display = "flex";
+// });

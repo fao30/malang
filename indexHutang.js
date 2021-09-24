@@ -114,17 +114,18 @@ function render() {
     todo.appendChild(newTodo);
     // todo.appendChild(button);
     // append to todoList
-    let nh = "nominalHutang" + [i];
-    let bs = "btnSubmit" + [i];
-    const inputBox = document.createElement("INPUT");
-    inputBox.setAttribute("type", "text");
-    inputBox.setAttribute("id", nh);
-    todo.appendChild(inputBox);
-    const btnSubmit = document.createElement("button");
-    btnSubmit.innerHTML = "Submit";
-    btnSubmit.setAttribute("id", bs);
-    todo.appendChild(btnSubmit);
-
+    if (localStorage.role == "admin") {
+      let nh = "nominalHutang" + [i];
+      let bs = "btnSubmit" + [i];
+      const inputBox = document.createElement("INPUT");
+      inputBox.setAttribute("type", "text");
+      inputBox.setAttribute("id", nh);
+      todo.appendChild(inputBox);
+      const btnSubmit = document.createElement("button");
+      btnSubmit.innerHTML = "Submit";
+      btnSubmit.setAttribute("id", bs);
+      todo.appendChild(btnSubmit);
+    }
     // append to todoList
     todoList.appendChild(todo);
   }
@@ -162,7 +163,6 @@ for (let k = 0; k < dataPenghutang.length; k++) {
     if (dataPenghutang[k].nominal <= 0) {
       document.querySelector(ti).style.display = "none";
       document.querySelector(is).style.display = "none";
-      // document.querySelector(element).style.display = "none";
 
       // console.log(dataPenghutang[k].nominal,"iniiii");
     }
