@@ -100,20 +100,14 @@ function render() {
   }
 
   FilterByDate(dataBuronan, dataPenghutang);
-  // console.log(sisaBayar())
-  // put all task to html
   for (let i = 0; i < dataPenghutang.length; i++) {
-    // create div
     const todo = document.createElement("div");
-    todo.classList.add("todo");
-    // create list
+    todo.classList.add("todo" + i);
     const newTodo = document.createElement("li");
     newTodo.innerText = `${dataPenghutang[i].nama} -- ${dataPenghutang[i].alamat} -- ${dataPenghutang[i].telp} -- ${dataPenghutang[i].dueDate} -- ${dataPenghutang[i].nominal}`;
     let ti = "todo-item" + [i];
     newTodo.classList.add(ti);
     todo.appendChild(newTodo);
-    // todo.appendChild(button);
-    // append to todoList
     if (localStorage.role == "admin") {
       let nh = "nominalHutang" + [i];
       let bs = "btnSubmit" + [i];
@@ -126,29 +120,13 @@ function render() {
       btnSubmit.setAttribute("id", bs);
       todo.appendChild(btnSubmit);
     }
-    // append to todoList
     todoList.appendChild(todo);
-  }
-
-  function hapusPeminjam(data, id) {
-    // console.log(data[id]);
-    let temp = data[0];
-    data[0] = data[id];
-    data[id] = temp;
-    data.shift();
-    return;
-  }
-
-  //nominal adalah input nominal baru yang diinginkan
-
-  function updatePinjaman(data, nominal) {
-    data.nominal -= nominal;
-    return;
   }
 }
 render();
 
 for (let k = 0; k < dataPenghutang.length; k++) {
+  let deleteBaris = ".todo" + [k];
   let btn = "btnSubmit" + [k];
   let is = "#nominalHutang" + [k];
   let isi = document.querySelector(is);
@@ -156,6 +134,7 @@ for (let k = 0; k < dataPenghutang.length; k++) {
   const element = document.getElementById(btn);
 
   element.addEventListener("click", () => {
+    console.log(deleteBaris);
     // console.log("halooo" + [k]);
     dataPenghutang[k].nominal -= isi.value;
     let jumlah = document.querySelector(ti);
@@ -163,20 +142,7 @@ for (let k = 0; k < dataPenghutang.length; k++) {
     if (dataPenghutang[k].nominal <= 0) {
       document.querySelector(ti).style.display = "none";
       document.querySelector(is).style.display = "none";
-
-      // console.log(dataPenghutang[k].nominal,"iniiii");
+      document.querySelector(deleteBaris).style.display = "none";
     }
   });
 }
-
-// let btnSubmit = document.querySelectorAll("#btnSubmit");
-// for (let i = 0; i < btnSubmit.length; i++) {
-//   btnSubmit[i].style.color = "#10b981";
-//   btnSubmit[i].style.backgroundColor = "#d1fae5";
-// }
-
-// let inputBox = document.querySelectorAll("#btnSubmit");
-// for (let i = 0; i < inputBox.length; i++) {
-//   inputBox[i].style.color = "#10b981";
-//   inputBox[i].style.backgroundColor = "#d1fae5";
-// }

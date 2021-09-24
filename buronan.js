@@ -9,6 +9,15 @@ var yearNow = today.getFullYear();
 
 let dataAll = [
   {
+    nomor: "No",
+    nama: "Nama",
+    alamat: "Alamat",
+    telp: "Telp",
+    dueDate: "dueDate",
+    nominal: "Nominal",
+  },
+  {
+    nomor: "1",
     nama: "jaka",
     alamat: "bekasi",
     telp: 089485736432,
@@ -16,6 +25,7 @@ let dataAll = [
     nominal: 500000,
   },
   {
+    nomor: "2",
     nama: "jaki",
     alamat: "jakarta",
     telp: 084324243534,
@@ -23,6 +33,7 @@ let dataAll = [
     nominal: 600000,
   },
   {
+    nomor: "3",
     nama: "jaku",
     alamat: "solo",
     telp: 084324243534,
@@ -30,6 +41,7 @@ let dataAll = [
     nominal: 700000,
   },
   {
+    nomor: "4",
     nama: "jake",
     alamat: "semarang",
     telp: 084324243534,
@@ -37,6 +49,7 @@ let dataAll = [
     nominal: 800000,
   },
   {
+    nomor: "5",
     nama: "jako",
     alamat: "jogja",
     telp: 084324243534,
@@ -44,6 +57,7 @@ let dataAll = [
     nominal: 900000,
   },
   {
+    nomor: "6",
     nama: "kaka",
     alamat: "makasar",
     telp: 084324243534,
@@ -51,6 +65,7 @@ let dataAll = [
     nominal: 1000000,
   },
   {
+    nomor: "7",
     nama: "kaki",
     alamat: "pontianak",
     telp: 084324243534,
@@ -58,6 +73,7 @@ let dataAll = [
     nominal: 1100000,
   },
   {
+    nomor: "8",
     nama: "kaku",
     alamat: "fakfak",
     telp: 084324243534,
@@ -65,6 +81,7 @@ let dataAll = [
     nominal: 1200000,
   },
   {
+    nomor: "9",
     nama: "kake",
     alamat: "jayapura",
     telp: 084324243534,
@@ -72,6 +89,7 @@ let dataAll = [
     nominal: 1300000,
   },
   {
+    nomor: "10",
     nama: "kako",
     alamat: "aceh",
     telp: 084324243534,
@@ -93,6 +111,23 @@ function FilterByDate(dataBuronan, dataPenghutang) {
       dataPenghutang.push(dataAll[i]);
     }
   }
+  dataBuronan.unshift({
+    nomor: "No",
+    nama: "Nama",
+    alamat: "Alamat",
+    telp: "Telp",
+    dueDate: "dueDate",
+    nominal: "Nominal",
+    denda: "Denda",
+  });
+  dataPenghutang.unshift({
+    nomor: "No",
+    nama: "Nama",
+    alamat: "Alamat",
+    telp: "Telp",
+    dueDate: "dueDate",
+    nominal: "Nominal",
+  });
   return;
 }
 
@@ -147,9 +182,18 @@ function render() {
       cell.classList.add("cell" + String(i));
 
       if (i == 0) {
-        var cellText = document.createTextNode(dataBuronan[j].nama);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
+        if (j == 0) {
+          var cellText = document.createTextNode(dataAll[j].nomor);
+          cell.appendChild(cellText);
+          row.appendChild(cell);
+          row.style.background = "#ff9900";
+          row.style.color = "black";
+        } else {
+          dataAll[j].nomor = j;
+          var cellText = document.createTextNode(dataAll[j].nomor);
+          cell.appendChild(cellText);
+          row.appendChild(cell);
+        }
       } else if (i == 1) {
         var cellText = document.createTextNode(dataBuronan[j].alamat);
         cell.appendChild(cellText);
@@ -183,7 +227,8 @@ function render() {
 
   tbl.setAttribute("border", "1");
   tbl.setAttribute("class", "content-table");
-  tbl.setAttribute("style", "overflow-x: auto");
+  tbl.setAttribute("style", "overflow-x: auto"); // CEK
+  tbl.style.background = "blue";
 
   // function hapusPeminjam(data, id) {
   //   // console.log(data[id]);

@@ -26,7 +26,8 @@ body {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  background-color: rgba(85, 78, 78, 0.548);
+  /* background-color: rgba(85, 78, 78, 0.548); */
+  /* background: url(img/sudut.jpg); */
   font-weight: 300;
 }
 

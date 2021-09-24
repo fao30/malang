@@ -3,8 +3,9 @@ body {
   margin: 0;
   color: rgb(197, 189, 189);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* background-position: center; */
+  background-position: center;
 }
+
 .container-login {
   width: 100%;
   min-height: 100vh;
