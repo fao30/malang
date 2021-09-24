@@ -176,23 +176,25 @@ function render() {
         cell.appendChild(cellText);
         row.appendChild(cell);
       } else if (i == 5) {
-        if (j == 0) {
-          var cellText = document.createTextNode("Edit");
-          cell.appendChild(cellText);
-          row.appendChild(cell);
-          row.style.background = "#ff9900";
-          row.style.color = "black";
-        } else {
-          let nh = "nominalHutang" + j;
-          let bs = "btnSubmit" + j;
-          const inputBox = document.createElement("INPUT");
-          inputBox.setAttribute("type", "text");
-          inputBox.setAttribute("id", nh);
-          row.appendChild(inputBox);
-          const btnSubmit = document.createElement("button");
-          btnSubmit.innerHTML = "Submit";
-          btnSubmit.setAttribute("id", bs);
-          row.appendChild(btnSubmit);
+        if (localStorage.role == "admin") {
+          if (j == 0) {
+            var cellText = document.createTextNode("Update");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            row.style.background = "#ff9900";
+            row.style.color = "black";
+          } else {
+            let nh = "nominalHutang" + j;
+            let bs = "btnSubmit" + j;
+            const inputBox = document.createElement("INPUT");
+            inputBox.setAttribute("type", "text");
+            inputBox.setAttribute("id", nh);
+            row.appendChild(inputBox);
+            const btnSubmit = document.createElement("button");
+            btnSubmit.innerHTML = "Submit";
+            btnSubmit.setAttribute("id", bs);
+            row.appendChild(btnSubmit);
+          }
         }
       }
     }
