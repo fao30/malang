@@ -156,6 +156,11 @@ button:focus {
   font-size: 1.8rem;
   line-height: 2.25rem;
 }
+.notif {
+  color: #f8a022;
+  font-size: 1em;
+  padding-left: 20vw;
+}
 
 h2 {
   color: rgb(0, 0, 0);
@@ -166,7 +171,7 @@ h2 {
   font-size: 30px;
 }
 
-#tombol input[type="submit"] {
+#tombol input[type="button"] {
   padding: 20px;
   border-radius: 50px;
   font-size: 20px;
@@ -179,4 +184,51 @@ h2 {
 }
 #tombol input:hover {
   background-color: #e48704;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1.5em;
+  min-width: 400px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  /* align-content: center; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-table thead tr {
+  background-color: #ff9900;
+  color: black;
+  text-align: left;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 4px solid seashell;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  /* border-bottom: 1px solid #dddddd; */
+  color: #ff9900;
+  background-color: rgba(17, 15, 13, 1.55);
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: rgba(17, 15, 13, 0.85);
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+  background-color: rgba(17, 15, 13, 1.55);
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #ff9900;
 }

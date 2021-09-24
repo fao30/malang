@@ -18,10 +18,33 @@
       </div>
       <h2><b>Buronan List</b></h2>
       <div class="todo-box">
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Alamat</th>
+              <th>Telp</th>
+              <th>dueDate</th>
+              <th>Nominal</th>
+              <th>Denda</th>
+            </tr>
+          </thead>
+          <tbody class="tBody"></tbody>
+        </table>
         <ul class="todo-list"></ul>
+
         <div id="tombol">
-          <input type="submit" value="HOME" />
-          <a href="homepage.html"></a>
+          <a href="homepage.html"><input type="button" value="HOME" /></a>
+        </div>
+        <div class="notif">
+          <ul>
+            <li>telat <= 1 minggu, bunga = 50 %</li>
+            <li>telat <= 2 minggu, bunga = 70 %</li>
+            <li>telat <= 3 minggu, bunga = 90 %</li>
+            <li>telat <= 4 minggu, bunga = 120 %</li>
+            <li>telat <= 4 minggu, bunga = 120 % + (jumlah hari telat) %</li>
+          </ul>
         </div>
       </div>
     </div>

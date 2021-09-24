@@ -159,6 +159,13 @@ for (let k = 0; k < dataPenghutang.length; k++) {
     dataPenghutang[k].nominal -= isi.value;
     let jumlah = document.querySelector(ti);
     jumlah.innerHTML = `${dataPenghutang[k].nama} -- ${dataPenghutang[k].alamat} -- ${dataPenghutang[k].telp} -- ${dataPenghutang[k].dueDate} -- ${dataPenghutang[k].nominal}`;
+    if (dataPenghutang[k].nominal <= 0) {
+      document.querySelector(ti).style.display = "none";
+      document.querySelector(is).style.display = "none";
+      // document.querySelector(element).style.display = "none";
+
+      // console.log(dataPenghutang[k].nominal,"iniiii");
+    }
   });
 }
 
